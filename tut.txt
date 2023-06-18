@@ -1,0 +1,2 @@
+
+https://api.themoviedb.org/3/genre/movie/list?api_key=14d45a9a548ec9a12754f4549ed7a341
