@@ -1,5 +1,5 @@
 html, body{
-    background-color: black;
+    background-color:#141414;
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +11,11 @@ html, body{
     margin: 0 auto;
 }
 
+*::-webkit-scrollbar{
+    display: none;
+}
+
+/* HEADER CSS */
 header{
     background-color:transparent;
     /* background-color:gray; */
@@ -20,6 +25,9 @@ header{
     top: 0;
     width: 100%;
     transition: all ease 600ms;
+}
+.black-bg{
+    background-color: rgb(20, 20, 20);
 }
 .header-cont{
     display: flex;
@@ -31,7 +39,7 @@ header{
     flex-direction: row;
     align-items: center;
 }
-.header .brand{
+.header-brand{
     max-width: 110px;
 }
 .main-nav{
@@ -68,9 +76,9 @@ header{
 .movies-section{
     margin: 41px 0;
 }
-.movies-section-heading{
+.movie-section-heading{
     font-size:20px;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
     line-height: 1.2;
     cursor: pointer;
@@ -81,14 +89,16 @@ header{
     font-size: 12px;
     display: none;
 }
-.movies-section-heading:hover .explore-nudge{
+.movie-section-heading:hover .explore-nudge{
     display: inline-block;
 }
 .movies-row{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+    overflow-y: hidden;
 }
 .movie-item{
     width: 245px;
@@ -106,10 +116,87 @@ header{
     transition:transform linear 300ms;
 }
 
+/* BANNER SECTION */
+
+.banner-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    position: relative;
+    padding-top: 80px;
+}
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+
+}
+
+.banner-title{
+    color: white;
+    font-size: 84px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    margin: 0;
+}
+.banner-info{
+    margin-bottom:14px ;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: white;
+}
+
+.banner-overview{
+    font-size: 16px;
+    color: white;
+    line-height: 1.33;
+    max-width: 40%;
+}
+.action-buttons-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.action-button{
+    border: none;
+    background-color: white;
+    padding: 8px 21px;
+    margin-right: 11px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+.action-button:last-child{
+    background-color: rgba(109, 109, 110, 0.7);
+    color:white;
+}
+.banner-fadebottom{
+    height: 120px;
+    background:linear-gradient(180deg,
+        transparent,
+        rgba(37,37,37,.61),
+        #141414
+    ); 
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+}
 
 /* RESPOSIVE CSS OF HEADER */
 @media(max-width:767px){
     .main-nav{
     display: none;
+    }
+
+    .banner-overview{
+        max-width:100%;
     }
 }
